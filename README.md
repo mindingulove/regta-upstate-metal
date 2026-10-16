@@ -3,6 +3,13 @@
 Build kit for running **GTA III + Upstate Liberty** natively on **Apple Silicon Macs** with a Metal renderer, Metal ray tracing
 (reflections, sun shadows, rain puddles) and MetalFX upscaling.
 
+| | |
+|---|---|
+| ![Street](screenshots/street.jpg) | ![Pedestrians](screenshots/pedestrians.jpg) |
+| ![Rain with wet roads](screenshots/rain.jpg) | |
+
+*Screenshots from development builds, with the performance overlay on (Options → Graphics → Advanced graphics → Show FPS).*
+
 **This repository contains no game files and no game source.** It holds:
 
 - `regta-upstate-metal.patch`: the changes to [reGTA](https://github.com/gmh5225/reGTA) (Upstate Liberty support, native ports of
