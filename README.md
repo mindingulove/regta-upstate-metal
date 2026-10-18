@@ -79,3 +79,14 @@ If you are the author of one of these mods and want your port removed or changed
 - reGTA is fetched from its own public repository and is subject to its own terms. The patch only contains the changes made
   for this project.
 - New files written for this project, such as the Metal backend in librw-metal, are under the MIT license.
+
+
+## October 18 performance checkpoint
+
+The source includes persistent ray-tracing residency, temporally accumulated sun shafts, coherent shadow/GI tile scheduling, motion-vector vehicle history, stable reflection preparation and footprint-based reflected texture mip selection. The accompanying source defaults request 90% render scale and 4x MSAA; existing user settings are retained. Historical gameplay figures are in [PERFORMANCE_PLAN.md](PERFORMANCE_PLAN.md), not a promise of FPS on another machine.
+
+Basic `REGTA_MTLGL_LOG=1` records CPU sections and three kernel encoder times every 240 traces. Expensive repeats/counters/rebuild experiments now additionally require `REGTA_RT_DIAGNOSTICS=1`. Timed frames use serialized encoder samples; normal rendering remains concurrent. A production no-window fixture checks identical output with logging off/basic/detailed and resource cleanup. See `docs/RT_PROFILING.md` in the reconstructed source.
+
+Step 3 (memoryless attachments/store actions/private textures) and CPU threading remain pending. Sun-shaft spikes and cold-cache traversal still need controlled gameplay measurements. The zebra-pattern scratches failed user review; their contact-driven replacement is deferred. No world/map conversion is included. Build/fixture results do not establish gameplay visual acceptance.
+
+Validation for this checkpoint: reconstructed the pinned upstream source with the published patch/library inputs and completed a clean Metal build for each game. All four local OpenGL/Metal executables built and were installed while stopped with signature checks, backups and unchanged INI hashes. No game was launched. A new gameplay performance comparison is pending.

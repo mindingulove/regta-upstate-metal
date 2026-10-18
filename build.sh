@@ -9,7 +9,7 @@ set -euo pipefail
 REGTA_URL=https://github.com/gmh5225/reGTA.git
 REGTA_COMMIT=b846c8f5ae168c8b7fe79d7193e142f5ac4448cb	# the commit the patch was made against
 LIBRW_URL=https://github.com/mindingulove/librw-metal.git
-LIBRW_COMMIT=b8dd020b9d014c9065f5b4bc76a17d2f5f732d62
+LIBRW_COMMIT=492be8528d6029d2f539383ba75fd5d14d97727e
 
 HERE="$(cd "$(dirname "$0")" && pwd)"
 WORK="$HERE/work"
